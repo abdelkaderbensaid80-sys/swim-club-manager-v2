@@ -1,3 +1,4 @@
+import './globals.css';
 export const metadata = {
   title: 'نظام إدارة نادي السباحة',
   description: 'تطبيق احترافي لإدارة المدربين والسباحين',
