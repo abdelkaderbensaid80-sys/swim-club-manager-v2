@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Swim Club Manager',
-  description: 'Manage your swimming club efficiently',
+  title: 'نظام إدارة نادي السباحة',
+  description: 'تطبيق احترافي لإدارة المدربين والسباحين',
 }
 
 export default function RootLayout({
@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl">
-      <body>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   )
 }
