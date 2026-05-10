@@ -1,38 +1,19 @@
-"use client";
-import { useFormState } from "react-dom";
-import { handleOnboarding } from "./actions";
+import Link from 'next/link';
 
-// صاوبنا هاد الحالة البدئية باش TypeScript يرتاح
-const initialState = {
-  error: "",
-};
-
-export default function OnboardingPage() {
-  // استعملنا initialState اللي عرفنا الفوق
-  const [state, formAction] = useFormState(handleOnboarding, initialState);
-
+export default function HomePage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4" dir="rtl">
-      <form action={formAction} className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md border">
-        <h1 className="text-2xl font-bold mb-6 text-center">إعداد النادي الرياضي</h1>
-        <input type="hidden" name="mode" value="create" />
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-white text-right" dir="rtl">
+      <div className="text-center space-y-6">
+        <h1 className="text-5xl font-black text-blue-900">MySwimPro V2</h1>
+        <p className="text-xl text-slate-600">أهلاً بك كوتش! ابدأ بتنظيم ناديك الرياضي الآن.</p>
         
-        <div className="space-y-4">
-          <input name="name" placeholder="اسم نادي السباحة" className="w-full p-3 border rounded outline-blue-500" required />
-          <input name="city" placeholder="المدينة" className="w-full p-3 border rounded outline-blue-500" required />
-          
-          {/* كانديرو Check واش كاين شي message في الـ error */}
-          {state?.error && (
-            <p className="text-red-500 text-sm bg-red-50 p-2 rounded border border-red-100">
-              {state.error}
-            </p>
-          )}
-          
-          <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded font-bold transition-colors">
-            إنشاء النادي
-          </button>
-        </div>
-      </form>
+        <Link 
+          href="/onboarding" 
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-blue-200 transition-all transform hover:scale-105"
+        >
+          إعداد النادي (Onboarding)
+        </Link>
+      </div>
     </div>
   );
 }
